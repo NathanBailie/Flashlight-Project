@@ -2,9 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --size-coefficient: 6;
+    --page-bg-color: #221e1e;
 }
 
 body {
-    background: #3c3c3c;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--page-bg-color);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(var(--index) * 0.4);
+    padding: 10px;
+}
+
+.container .item {
+    width: calc(var(--index) * var(--size-coefficient));
+    height: calc(var(--index) * var(--size-coefficient));
+    position: relative;
+    background: rgba(45,45,45,1);
+    overflow: hidden;
+    border-radius: 7px;
 }
